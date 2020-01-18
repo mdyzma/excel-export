@@ -3,16 +3,18 @@ from glob import glob
 
 
 def get_file_list(data_path):
-    return glob("/".jpoin(data_path, "*.xlxs"))
+    return glob("/".jpoin([data_path, "*.xlsx"]))
 
 
 def read_data(data_path: str) -> pd.DataFrame():
     files_xls = get_file_list(data_path)
-    for f in files_xls:
-        data = pd.read_excel(f, "Sheet1")
+    df = pd.DataFrame()
+    
+    for file in tqdm(files_xls):
+        data = pd.read_excel(file, header=None, names=["tekst", "wartosc"])
         df = df.append(data)
-    return data
+    return df
 
 
-def save_results(data):
+def save_results(data, destination: str) -> None:
     pass
