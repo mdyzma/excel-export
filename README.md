@@ -1,23 +1,23 @@
 # Excel export
-Prosty program do wyciagania danych z Excela.
+Prosty program do wyciągania danych z wielu plików Excela i zapisywania ich jako tabela w `docx`.
 
 
 
-### Sciągnij paczke z GH:
+### Sciągnij paczkę z GH:
 
 ```bash
 $ git clone https://github.com/mdyzma/excel-export.git
 
 ```
 
-### Zainstaluj zaleznosci
+### Zainstaluj zależności
 
-Przejdz do glownego folderu:
+Przejdź do głównego folderu:
 
 ```bash
 $ cd excel-export
 ```
-Zainstaluj zaleznosci:
+Zainstaluj zależności:
 
 ```bash
 pip install -r  requirements.txt
@@ -25,22 +25,22 @@ pip install -r  requirements.txt
 
 ### Uruchom
 
-Przejdz do glownego folderu:
+Przejdź do głównego folderu:
 
 ```bash
 $ cd excel-export
 ```
 Odpal program i podaj parametry
 
-`--input <pliki-excela-na-dysku>` oraz `--nsamples <liczba-wylosowanych-wynikow>`. Domyslna wartość dla liczby próbek wynosi `100`. Możliwe jest dodanie trzeciego parametru - folderu w którym zapisane beda wyniki `--destination <nazw-folderu-do-zapisania-wyników>`. Domyślna wartoćć to folder `~/exls_exports/`. Parametry oczywiście bez `<` i `>`
+`--input <pliki-excela-na-dysku>` oraz `--nsamples <liczba-wylosowanych-wynikow>`. Domyślna wartość dla liczby próbek wynosi `100`. Możliwe jest dodanie trzeciego parametru - folderu w którym zapisane będą wyniki `--destination <nazw-folderu-do-zapisania-wyników>`. Domyślna wartość to folder `~/exls_exports/`. Parametry oczywiście bez `<` i `>`
 
-Na przykład (Windows):
+Przykład dla Windows:
 
 ```bash
-python main.py --input Dokumenty\excelfiles --nsamples 1000
+python main.py --input %UerProfile%\Dokumenty\excel-files --nsamples 1000
 ```
 
-Przykład Linux:
+Przykład dla Linux:
 
 ```bash
 python main.py --input ~/excel-files --nsamples 1000
