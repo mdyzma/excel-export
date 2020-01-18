@@ -30,7 +30,7 @@ def save_results(data, destination: str) -> None:
     fname = "-".join(["results", time_now, ".docx"])
     path = os.path.join(destination, fname)
 
-    logging.info("Writing files to {} files".format(destination))
+    logging.info("Writing data to {}".format(destination))
 
     # add the header rows.
     for j in range(data.shape[-1]):
