@@ -30,9 +30,9 @@ Przejdz do glownego folderu:
 ```bash
 $ cd excel-export
 ```
-Odpal program i podaj paramentry
+Odpal program i podaj parametry
 
-`--input <pliki-excela-na-dysku>` oraz `--nsamples <liczba-wylosowanych-wynikow>`. Możliwe jest dodanie trzeciego parametru - folderu w którym zapisane beda wyniki `--destination <nazw-folderu-do-zapisania-wyników>`. Parametry oczywiście bez `<` i `>`
+`--input <pliki-excela-na-dysku>` oraz `--nsamples <liczba-wylosowanych-wynikow>`. Domyslna wartość dla liczby próbek wynosi `100`. Możliwe jest dodanie trzeciego parametru - folderu w którym zapisane beda wyniki `--destination <nazw-folderu-do-zapisania-wyników>`. Domyślna wartoćć to folder `~/exls_exports/`. Parametry oczywiście bez `<` i `>`
 
 Na przykład (Windows):
 
