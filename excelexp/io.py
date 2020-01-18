@@ -1,7 +1,9 @@
 import os
+import docx
 import pandas as pd
 from glob import glob
 from datetime import datetime
+from tqdm import tqdm
 
 
 def get_file_list(data_path):
