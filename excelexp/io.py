@@ -1,18 +1,19 @@
 import os
 import logging
+from datetime import datetime
+from typing import List
+from glob import glob
 
 import docx
 import pandas as pd
-from glob import glob
-from datetime import datetime
 from tqdm import tqdm
 
 
-def get_file_list(data_path):
+def get_file_list(data_path: str) -> List[str]:
     return glob("/".join([data_path, "*.xlsx"]))
 
 
-def read_data(data_path: str) -> pd.DataFrame():
+def read_data(data_path: str) -> pd.DataFrame:
     files_xls = get_file_list(data_path)
     df = pd.DataFrame()
     logging.info("Extracting data from {} files".format(len(files_xls)))
@@ -22,7 +23,7 @@ def read_data(data_path: str) -> pd.DataFrame():
     return df
 
 
-def save_results(data, destination: str) -> None:
+def save_results(data: pd.DataFrame, destination: str, n_samples: int) -> None:
     doc = docx.Document()
     t = doc.add_table(data.shape[0] + 1, data.shape[1])
 
@@ -30,7 +31,7 @@ def save_results(data, destination: str) -> None:
     fname = "-".join(["results", time_now, ".docx"])
     path = os.path.join(destination, fname)
 
-    logging.info("Writing data to {}".format(destination))
+    logging.info("Writing {} data samples to {}".format(n_samples, destination))
 
     # add the header rows.
     for j in range(data.shape[-1]):
