@@ -6,7 +6,7 @@ from datetime import datetime
 def default_output_path() -> str:
 
     home = os.path.expanduser("~")
-    time_now = datetime.now().strftime("%y%m%d_%H%M")
+    time_now = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     return os.path.join(home, "exls_exports", time_now)
 
 
