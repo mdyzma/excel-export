@@ -7,7 +7,7 @@ from tqdm import tqdm
 
 
 def get_file_list(data_path):
-    return glob("/".jpoin([data_path, "*.xlsx"]))
+    return glob("/".join([data_path, "*.xlsx"]))
 
 
 def read_data(data_path: str) -> pd.DataFrame():
