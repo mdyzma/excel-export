@@ -27,5 +27,8 @@ if __name__ == "__main__":
     destination = os.path.abspath(args.destination)
     os.makedirs(destination, exist_ok=True)
 
-    export_to_docx(samples, destination, n_samples)
-    export_to_pdf(samples, destination)
+    try:
+        export_to_docx(samples, destination, n_samples)
+        export_to_pdf(samples, destination)
+    except Exception as e:
+        logging.error("Could not export data \n\n{}".format(e))

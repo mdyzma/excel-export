@@ -48,6 +48,8 @@ def export_to_docx(data: pd.DataFrame, destination: str, n_samples: int) -> None
 
 
 def export_to_pdf(data: pd.DataFrame, destination: str) -> None:
+
+    logging.info("Writing data to PDF document in {}".format(n_samples, destination))
     fname = "".join(["results", ".pdf"])
     path = os.path.join(destination, fname)
     pdfkit.from_string(data.to_html(), path)
