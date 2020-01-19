@@ -24,12 +24,12 @@ pip install -r  requirements.txt
 ```
 
 
-Aby moc wygenerowac PDFa potrzebna jest tez biblioteka whtmltopdf. Instrukcja instalacji:
+Aby móc wygenerować PDFa potrzebna jest też biblioteka `whtmltopdf`. Instrukcja instalacji:
 
 https://github.com/JazzCore/python-pdfkit/wiki/Installing-wkhtmltopdf
 
 
-Po instalacji nalezy dodac folder `bin` do zmiennych środowiskowych.
+Po instalacji należy dodać folder `bin` z folderu instalacji `whtmltopdf` do zmiennych środowiskowych.
 
 
 ### Uruchom
