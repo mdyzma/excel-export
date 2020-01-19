@@ -2,7 +2,7 @@ import os
 import logging
 
 from excelexp.cli import create_parser
-from excelexp.io import read_data, save_results
+from excelexp.io import read_data, export_to_docx, export_to_pdf
 from excelexp.transform import get_samples  # , filter_rows, filter_func
 
 # set logging
@@ -27,4 +27,5 @@ if __name__ == "__main__":
     destination = os.path.abspath(args.destination)
     os.makedirs(destination, exist_ok=True)
 
-    save_results(samples, destination, n_samples)
+    export_to_docx(samples, destination, n_samples)
+    export_to_pdf(samples, destination)

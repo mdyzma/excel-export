@@ -23,6 +23,15 @@ Zainstaluj zależności:
 pip install -r  requirements.txt
 ```
 
+
+Aby moc wygenerowac PDFa potrzebna jest tez biblioteka whtmltopdf. Instrukcja instalacji:
+
+https://github.com/JazzCore/python-pdfkit/wiki/Installing-wkhtmltopdf
+
+
+Po instalacji nalezy dodac folder `bin` do zmiennych środowiskowych.
+
+
 ### Uruchom
 
 Przejdź do głównego folderu:
@@ -53,4 +62,17 @@ python main.py --input ~/excel-files --nsamples 1000
 
 ```bash
 python main.py --help
+
+usage: main.py [-h] [--input INPUT] [--destination DESTINATION]
+               [--nsamples NSAMPLES]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --input INPUT, -i INPUT
+                        Ścieżka do folderu z plikami xls
+  --destination DESTINATION, -d DESTINATION
+                        Folder do zapiasania wynikow
+  --nsamples NSAMPLES, -s NSAMPLES
+                        Liczba wierszy wylosowana losowo z calego datasetu.
+
 ```
