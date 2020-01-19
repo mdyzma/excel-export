@@ -1,7 +1,7 @@
 # Excel export
 Prosty program do wyciągania danych z wielu plików Excela i zapisywania ich jako tabela w `docx`.
 
-
+![](short.gif)
 
 ### Sciągnij paczkę z GH:
 

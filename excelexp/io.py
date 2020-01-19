@@ -28,7 +28,7 @@ def export_to_docx(data: pd.DataFrame, destination: str, n_samples: int) -> None
     doc = docx.Document()
     t = doc.add_table(data.shape[0] + 1, data.shape[1])
 
-    fname = "-".join(["results", ".docx"])
+    fname = "".join(["results", ".docx"])
     path = os.path.join(destination, fname)
 
     logging.info(
@@ -48,6 +48,6 @@ def export_to_docx(data: pd.DataFrame, destination: str, n_samples: int) -> None
 
 
 def export_to_pdf(data: pd.DataFrame, destination: str) -> None:
-    fname = "-".join(["results", ".pdf"])
+    fname = "".join(["results", ".pdf"])
     path = os.path.join(destination, fname)
     pdfkit.from_string(data.to_html(), path)
