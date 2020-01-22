@@ -36,7 +36,7 @@ def export_to_docx(data: pd.DataFrame, destination: str, n_samples: int) -> None
         "Writing {} data samples to Word document in {}".format(
             n_samples, destination)
     )
-
+    data = data[['tekst']]
     # add the header rows.
     for j in range(data.shape[-1]):
         t.cell(0, j).text = data.columns[j]
