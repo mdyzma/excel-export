@@ -23,18 +23,19 @@ if __name__ == "__main__":
 
     if args.filter:
         filter_value = int(args.filter)
-        
+
         n_samples = int(args.nsamples)
         samples = get_samples(data, n_samples)
         filtered_data = samples.loc[samples["wartosc"] == filter_value]
     else:
         filtered_data = samples
-    
+
     destination = os.path.abspath(args.destination)
     os.makedirs(destination, exist_ok=True)
 
     try:
-        export_to_docx(filtered_data, destination, n_samples)
+        number_of_rows = len(filtered_data)
+        export_to_docx(filtered_data, destination, number_of_rows)
         export_to_pdf(filtered_data, destination)
     except Exception as e:
         logging.error("Could not export data \n\n{}".format(e))
