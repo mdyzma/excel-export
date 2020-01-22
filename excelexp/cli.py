@@ -25,5 +25,10 @@ def create_parser() -> argparse.ArgumentParser:
         default=100,
         help="Liczba wierszy wylosowana losowo z calego datasetu.",
     )
+    parser.add_argument(
+        "--filter",
+        "-f",
+        help="Liczba do filtrowania datasetu.",
+    )
 
     return parser
