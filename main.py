@@ -27,7 +27,6 @@ if __name__ == "__main__":
         n_samples = int(args.nsamples)
         samples = get_samples(data, n_samples)
         filtered_data = samples.loc[samples["wartosc"] == filter_value]
-        filtered_data = filtered_data["tekst"]
     else:
         filtered_data = samples
     

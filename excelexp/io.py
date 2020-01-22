@@ -11,7 +11,8 @@ from tqdm import tqdm
 
 
 def get_file_list(data_path: str) -> List[str]:
-    return glob("/".join([data_path, "*.xlsx"]))
+    separator = os.sep
+    return glob(separator.join([data_path, "*.xlsx"]))
 
 
 def read_data(data_path: str) -> pd.DataFrame:
@@ -32,7 +33,8 @@ def export_to_docx(data: pd.DataFrame, destination: str, n_samples: int) -> None
     path = os.path.join(destination, fname)
 
     logging.info(
-        "Writing {} data samples to Word document in {}".format(n_samples, destination)
+        "Writing {} data samples to Word document in {}".format(
+            n_samples, destination)
     )
 
     # add the header rows.
@@ -52,4 +54,5 @@ def export_to_pdf(data: pd.DataFrame, destination: str) -> None:
     logging.info("Writing data to PDF document in {}".format(destination))
     fname = "".join(["results", ".pdf"])
     path = os.path.join(destination, fname)
-    pdfkit.from_string(data.to_html(), path)
+    pdfkit.from_string(data.to_html(
+        columns=['tekst'], index=False, border=0), path)
