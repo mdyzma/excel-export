@@ -1,6 +1,6 @@
+# -*- coding: utf-8 -*-
 from typing import Callable
 import pandas as pd
-
 
 
 def filter_rows(data: pd.DataFrame, filter_func: Callable = None) -> pd.DataFrame:
