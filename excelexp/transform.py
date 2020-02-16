@@ -8,7 +8,6 @@ def filter_rows(data: pd.DataFrame, filter_func: Callable = None) -> pd.DataFram
     return filtered_data
 
 
-def get_samples(data: pd.DataFrame, n_samples: str) -> pd.DataFrame:
-    n_samples = int(n_samples)
-    samples = data.sample(n_samples)
+def get_samples(data: pd.DataFrame, n_samples: int) -> pd.DataFrame:
+    samples = data.head(n_samples)
     return samples

@@ -24,13 +24,19 @@ def create_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--nsamples",
         "-s",
-        default=100,
+        default=10,
         help="Liczba wierszy wylosowana losowo z calego datasetu.",
     )
     parser.add_argument(
         "--filter",
         "-f",
         help="Liczba do filtrowania datasetu.",
+    )
+    parser.add_argument(
+        "--files",
+        type=argparse.FileType('r'),
+        nargs='+',
+        help="Lista plikow.",
     )
 
     return parser

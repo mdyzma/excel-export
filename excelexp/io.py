@@ -16,8 +16,7 @@ def get_file_list(data_path: str) -> List[str]:
     return glob(separator.join([data_path, "*.xlsx"]))
 
 
-def read_data(data_path: str) -> pd.DataFrame:
-    files_xls = get_file_list(data_path)
+def read_data(files_xls: List[str]) -> pd.DataFrame:
     df = pd.DataFrame()
     logging.info("Extracting data from {} files".format(len(files_xls)))
     for file in tqdm(files_xls):
