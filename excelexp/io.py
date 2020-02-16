@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import os
 import logging
 from datetime import datetime
@@ -20,7 +21,9 @@ def read_data(data_path: str) -> pd.DataFrame:
     df = pd.DataFrame()
     logging.info("Extracting data from {} files".format(len(files_xls)))
     for file in tqdm(files_xls):
-        data = pd.read_excel(file, header=None, names=["tekst", "wartosc"])
+        data = pd.read_excel(file, header=None,
+                             names=["tekst", "wartosc"],
+                             encoding='utf-8')
         df = df.append(data)
     return df
 

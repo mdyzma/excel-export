@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import os
 import argparse
 from datetime import datetime
@@ -12,7 +13,8 @@ def default_output_path() -> str:
 
 def create_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input", "-i", help="Ścieżka do folderu z plikami xls")
+    parser.add_argument(
+        "--input", "-i", help="Ścieżka do folderu z plikami xls")
     parser.add_argument(
         "--destination",
         "-d",
