@@ -55,6 +55,11 @@ Przykład dla Linux:
 python main.py --input ~/excel-files --nsamples 1000 --filter 5
 ```
 
+Jesli nie chcesz uzywać wszystkich plików, możesz skorzystać z opcji `--files` i podać scieżki konkretnych plików excela, np:
+
+```bash
+python main.py --files ~/path/to/excel/excel-file.xlsx --nsamples 1000 --filter 5
+```
 
 ### Help
 
